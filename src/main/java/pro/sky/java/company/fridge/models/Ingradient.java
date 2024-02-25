@@ -1,15 +1,26 @@
 package pro.sky.java.company.fridge.models;
 
-import java.util.ArrayList;
+
+
+import jakarta.persistence.*;
 import java.util.List;
 import java.util.Objects;
-
+@Entity
 public class Ingradient {
-    private int id;
-    private String recepts = "";
+    @Id
 
-    public Ingradient(List<Integer> list) {
+    private int id;
+    private String recepts;
+
+   public Ingradient(List<Integer> list) {
         this.id = hashCodeIngradient(list);
+    }
+    public Ingradient(List<Integer> list,String str){
+        this.id = hashCodeIngradient(list);
+        this.recepts=str;
+    }
+
+    public Ingradient() {
     }
 
     public void setRecepts(String recepts) {
