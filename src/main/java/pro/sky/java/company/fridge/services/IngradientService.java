@@ -18,7 +18,7 @@ public class IngradientService {
 
     public Ingradient add(ArrayList<String> list, String str) {
         Collections.sort(list);
-        Ingradient ingradient = new Ingradient(list.hashCode(),list,str);
+        Ingradient ingradient = new Ingradient(list.hashCode(), list, str);
         return repository.save(ingradient);
 
     }

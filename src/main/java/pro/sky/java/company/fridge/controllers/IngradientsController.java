@@ -18,14 +18,15 @@ public class IngradientsController {
     }
 
     @GetMapping("/find")
-    public ResponseEntity<String> getRecept(@RequestParam("ids") ArrayList<String> list){
-              return ResponseEntity.ok(service.find(list));
-            }
+    public ResponseEntity<String> getRecept(@RequestParam("ids") ArrayList<String> list) {
+        return ResponseEntity.ok(service.find(list));
+    }
+
     @PostMapping
-    public ResponseEntity<Ingradient> createStudent(
-            @RequestParam  ArrayList<String> list,
-            @RequestParam  String str) {
-        Ingradient createdIngradient = service.add(list,str);
+    public ResponseEntity<Ingradient> createIngradient(
+            @RequestParam ArrayList<String> list,
+            @RequestParam String str) {
+        Ingradient createdIngradient = service.add(list, str);
         return ResponseEntity.ok(createdIngradient);
     }
 }

@@ -7,5 +7,5 @@ import java.util.Collection;
 
 
 public interface ReceptRepository extends JpaRepository<Ingradient, Integer> {
-    String getReceptsById(int id);
+
 }
