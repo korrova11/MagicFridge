@@ -26,6 +26,6 @@ public class IngradientService {
     public String find(ArrayList<String> list) {
         Collections.sort(list);
         int id = list.hashCode();
-        return repository.getReceptsById(id);
+        return repository.findById(id).get().getRecepts();
     }
 }

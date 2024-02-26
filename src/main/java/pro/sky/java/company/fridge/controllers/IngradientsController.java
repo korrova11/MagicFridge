@@ -8,6 +8,7 @@ import pro.sky.java.company.fridge.services.IngradientService;
 import java.util.ArrayList;
 
 @RestController
+@RequestMapping("/recept")
 public class IngradientsController {
     private final IngradientService service;
 
@@ -17,8 +18,8 @@ public class IngradientsController {
     }
 
     @GetMapping("/find")
-    public String getRecept(@RequestParam("ids") ArrayList<String> list){
-              return service.find(list);
+    public ResponseEntity<String> getRecept(@RequestParam("ids") ArrayList<String> list){
+              return ResponseEntity.ok(service.find(list));
             }
     @PostMapping
     public ResponseEntity<Ingradient> createStudent(
