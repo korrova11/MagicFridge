@@ -17,13 +17,14 @@ public class IngradientsController {
     }
 
     @GetMapping("/find")
-    public String addInBasket(@RequestParam("ids") ArrayList<Integer> list){
-        Ingradient ingradient=new Ingradient(list);
-        return service.find(ingradient.getId());
-    }
+    public String getRecept(@RequestParam("ids") ArrayList<String> list){
+              return service.find(list);
+            }
     @PostMapping
-    public ResponseEntity<Ingradient> createStudent(@RequestBody Ingradient ingradient) {
-        Ingradient createdIngradient = service.add(ingradient);
+    public ResponseEntity<Ingradient> createStudent(
+            @RequestParam  ArrayList<String> list,
+            @RequestParam  String str) {
+        Ingradient createdIngradient = service.add(list,str);
         return ResponseEntity.ok(createdIngradient);
     }
 }
